@@ -5,9 +5,6 @@ import random
 
 #hangman picture
 
-#generate the word
-
-#run program
 #Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 
 word_list = ['able', 'about', 'account', 'acid', 'across', 'act', 'addition', 'adjustment', 'advertisement', 'after', 'again', 'against',
