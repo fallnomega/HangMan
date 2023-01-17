@@ -1,41 +1,25 @@
 #imports
 import random
 import hangman_art
+import words_list
 
-
-
-#Randomly choose a word from the word_list and assign it to a variable called chosen_word.
-#Create a variable called 'lives' to keep track of the number of lives left.
-# Set 'lives' to equal 6.
-
-word_list = ['able', 'about', 'account', 'acid', 'across', 'act', 'addition', 'adjustment', 'advertisement', 'after', 'again', 'against',
-'agreement', 'air', 'all', 'almost', 'among', 'amount', 'amusement', 'and', 'angle', 'angry', 'animal', 'answer', 'ant',
-'any', 'apparatus', 'apple', 'approval', 'arch', 'argument', 'arm', 'army', 'art', 'as', 'at', 'attack', 'attempt',
-'attention', 'attraction', 'authority', 'automatic', 'awake', 'baby', 'back', 'bad', 'bag', 'balance', 'ball', 'band',
-'base', 'basin', 'basket', 'bath', 'be', 'beautiful', 'because', 'bed', 'bee', 'before', 'behaviour', 'belief', 'bell',
-'bent', 'berry', 'between', 'bird', 'birth', 'bit', 'bite', 'bitter', 'black', 'blade', 'blood', 'blow', 'blue', 'board',
-'boat', 'body', 'boiling', 'bone', 'book', 'boot', 'bottle', 'box', 'boy', 'brain', 'brake', 'branch', 'brass', 'bread']
+word_list = words_list.word_list
+stages = hangman_art.stages
+print(hangman_art.logo)
+print (stages[6])
 
 chosen_word = random.choice(word_list)
-
 display = []
 show_display=''
+
 for x in chosen_word:
     display+='_'
-
-#Testing code
-
 
 you_win = False
 word_length = len(chosen_word)
 result=""
-stages = hangman_art.stages
-print (stages[6])
-
-#If guess is not a letter in the chosen_word,
-# Then reduce 'lives' by 1.
-# If lives goes down to 0 then the game should stop and it should print "You lose."
 lives = 6
+
 while you_win==False:
     print(f'Pssst, the solution is: {chosen_word}.')
     guess = input("Guess a letter: ").lower()
