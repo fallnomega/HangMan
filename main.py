@@ -24,13 +24,17 @@ while you_win==False:
     print(f'Pssst, the solution is: {chosen_word}.')
     guess = input("Guess a letter: ").lower()
     result = ""
+
     for x in range(word_length):
         letter = chosen_word[x]
-        if guess == letter:
+        if guess == letter and display[x] is not letter:
             display[x]=letter
             for x in display:
                 result += x
+        elif guess == letter and display[x] == letter:
+            print(f"You have already used '{guess}', try another letter.")
     if guess not in chosen_word:
+        print(f"'{guess}' is not in the mystery word. Try again.")
         lives -=1
         print(stages[lives])
 
