@@ -85,7 +85,7 @@ for x in chosen_word:
 you_win = False
 word_length = len(chosen_word)
 result=""
-
+print (stages[6])
 
 #If guess is not a letter in the chosen_word,
 # Then reduce 'lives' by 1.
@@ -103,12 +103,12 @@ while you_win==False:
                 result += x
     if guess not in chosen_word:
         lives -=1
+        print(stages[lives])
 
     if result == chosen_word:
         you_win=True
         print (f"You WIN! The word was {chosen_word}")
     elif lives==0:
         print ("You Lose after 6 wrong guesses!")
-        exit()
-    #TODO-3: - print the ASCII art from 'stages' that corresponds to
-    # the current number of 'lives' the user has remaining.
+        you_win = True
+
