@@ -1,11 +1,69 @@
 #imports
 import random
-
-#code
-
 #hangman picture
 
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+
 #Randomly choose a word from the word_list and assign it to a variable called chosen_word.
+#Create a variable called 'lives' to keep track of the number of lives left.
+# Set 'lives' to equal 6.
+lives = 6
 
 word_list = ['able', 'about', 'account', 'acid', 'across', 'act', 'addition', 'adjustment', 'advertisement', 'after', 'again', 'against',
 'agreement', 'air', 'all', 'almost', 'among', 'amount', 'amusement', 'and', 'angle', 'angry', 'animal', 'answer', 'ant',
@@ -24,13 +82,15 @@ for x in chosen_word:
 
 #Testing code
 
-Use a while loop to let the user guess again.
-# The loop should only stop once the user has guessed all the letters in
-# the chosen_word and 'display' has no more blanks ("_").
-# Then you can tell the user they've won.
+
 you_win = False
 word_length = len(chosen_word)
 result=""
+
+
+#TODO-2: - If guess is not a letter in the chosen_word,
+# Then reduce 'lives' by 1.
+# If lives goes down to 0 then the game should stop and it should print "You lose."
 
 while you_win==False:
     print(f'Pssst, the solution is: {chosen_word}.')
@@ -46,3 +106,5 @@ while you_win==False:
     if result == chosen_word:
         you_win=True
         print (f"You WIN! The word was {chosen_word}")
+    #TODO-3: - print the ASCII art from 'stages' that corresponds to
+    # the current number of 'lives' the user has remaining.
