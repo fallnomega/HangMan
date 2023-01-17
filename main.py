@@ -1,63 +1,7 @@
 #imports
 import random
-#hangman picture
+import hangman_art
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
 
 #Randomly choose a word from the word_list and assign it to a variable called chosen_word.
@@ -85,6 +29,7 @@ for x in chosen_word:
 you_win = False
 word_length = len(chosen_word)
 result=""
+stages = hangman_art.stages
 print (stages[6])
 
 #If guess is not a letter in the chosen_word,
