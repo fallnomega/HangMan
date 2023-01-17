@@ -87,7 +87,7 @@ word_length = len(chosen_word)
 result=""
 
 
-#TODO-2: - If guess is not a letter in the chosen_word,
+#If guess is not a letter in the chosen_word,
 # Then reduce 'lives' by 1.
 # If lives goes down to 0 then the game should stop and it should print "You lose."
 lives = 6
